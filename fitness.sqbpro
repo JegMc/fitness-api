@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="fitness.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1464"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="activity_details" custom_title="0" dock_id="1" table="4,16:mainactivity_details"/><dock_state state="000000ff00000000fd00000001000000020000000000000000fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000011e00ffffff000000000000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="activity_details" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="35"/><column index="2" value="74"/><column index="3" value="93"/><column index="4" value="109"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">-- ================================
+-- 1. Inspect database structure
+-- ================================
+
+-- sqlite_master is SQLite's internal catalog.
+-- This query asks: &quot;What tables exist in this database?&quot;
+-- We use it to confirm our schema ran successfully.
+SELECT name FROM sqlite_master WHERE type='table';
+
+-- ================================
+-- 2. Insert a workout session
+-- ================================
+INSERT INTO workout_sessions (
+  workout_date,
+  workout_type,
+  duration_minutes,
+  active_calories,
+  notes
+)
+VALUES (
+  '2025-12-26',
+  'running',
+  50,
+  388,
+  '5k distance'
+);
+
+-- ================================
+-- 3. Retrieve all workouts
+-- ================================
+SELECT * FROM workout_sessions;
+
+-- ================================
+-- 4. Retrieve selected columns + ordering
+-- ================================
+SELECT workout_date, workout_type, duration_minutes, active_calories
+FROM workout_sessions
+ORDER BY workout_date DESC;
+
+-- ================================
+-- 5. Insert activity-specific details
+-- ================================
+INSERT INTO activity_details (
+  workout_id,
+  distance_miles,
+  calories_segment
+)
+VALUES (
+  2,
+  3.24,
+  470
+);
+
+-- ================================
+-- 6. Retrieve activity details alone
+-- ================================
+SELECT * FROM activity_details;
+
+
+
+-- ================================
+-- 7. Combine workouts + details (JOIN)
+-- ================================
+SELECT
+  ws.workout_date,
+  ws.workout_type,
+  ws.duration_minutes,
+  ws.active_calories,
+  ad.distance_miles,
+  ad.calories_segment
+FROM workout_sessions ws
+LEFT JOIN activity_details ad
+  ON ws.id = ad.workout_id
+ORDER BY workout_date DESC;
+
+
+
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>

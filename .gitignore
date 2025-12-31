@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+
+# local database files
+fitness.db
+fitness.db-journal
+fitness.db-wal
+fitness.db-shm
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/

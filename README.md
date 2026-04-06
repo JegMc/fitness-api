@@ -1,5 +1,7 @@
 # Fitness API (Node + Express + SQLite)
 
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/JegMc/fitness-api/badge)](https://scorecard.dev/viewer/?uri=github.com/JegMc/fitness-api)
+
 A backend API for logging workouts and retrieving workout history.
 
 This project was built to practice backend fundamentals:

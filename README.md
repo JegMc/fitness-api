@@ -196,7 +196,28 @@ Deletes the workout and any associated activity details.
 
 ---
 
-## Notes
+## Notes/ links 
+
+Contributing
+https://github.com/JegMc/fitness-api/blob/main/CONTRIBUTING.md
+
+Security
+https://github.com/JegMc/fitness-api/tree/main?tab=security-ov-file#readme
+
+License
+https://github.com/JegMc/fitness-api/tree/main?tab=MIT-1-ov-file#readme
+
+Issues
+https://github.com/JegMc/fitness-api/issues
+
+Releases
+https://github.com/JegMc/fitness-api/releases/tag/v1.0.0
+
+Testing (npm test)
+https://github.com/JegMc/fitness-api/blob/main/test/api.test.js
+
+Linting (npm run lint)
+https://github.com/JegMc/fitness-api/blob/main/.eslintrc.json
 
 ---
 

@@ -2,7 +2,7 @@
 
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/JegMc/fitness-api/badge)](https://scorecard.dev/viewer/?uri=github.com/JegMc/fitness-api)
 
-[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/12377/badge)](https://www.bestpractices.dev/projects/12377)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/12377/badge?refresh=1)](https://www.bestpractices.dev/projects/12377)
 
 A backend API for logging workouts and retrieving workout history.
 

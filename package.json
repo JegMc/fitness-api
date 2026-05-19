@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/JegMc/fitness-api#readme",
   "dependencies": {
-    "better-sqlite3": "^12.5.0",
+    "better-sqlite3": "^12.10.0",
     "express": "^5.2.1"
   },
   "devDependencies": {
